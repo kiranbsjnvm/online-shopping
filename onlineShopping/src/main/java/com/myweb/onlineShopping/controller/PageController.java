@@ -12,7 +12,26 @@ public class PageController
 	public ModelAndView index()
 	{
 		ModelAndView modelAndView = new ModelAndView("page");
-		modelAndView.addObject("greeting", "Welcome to mvc");
+		modelAndView.addObject("title", "Home");
+		modelAndView.addObject("userClickHome", true);
+		return modelAndView;
+	}
+	
+	@RequestMapping(value={"/about"})
+	public ModelAndView about()
+	{
+		ModelAndView modelAndView = new ModelAndView("page");
+		modelAndView.addObject("title", "About Us");
+		modelAndView.addObject("userClickAbout", true);
+		return modelAndView;
+	}
+	
+	@RequestMapping(value={"/contact"})
+	public ModelAndView contact()
+	{
+		ModelAndView modelAndView = new ModelAndView("page");
+		modelAndView.addObject("title", "Contact Us");
+		modelAndView.addObject("userClickContact", true);
 		return modelAndView;
 	}
 }
